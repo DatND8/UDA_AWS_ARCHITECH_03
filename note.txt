@@ -1,0 +1,26 @@
+
+aws cloudformation create-stack --region us-east-1 --stack-name c3-s3-1 --template-body file://starter//c3-s3.yml
+
+aws cloudformation create-stack --region us-east-1 --stack-name c3-vpc --template-body file://starter//c3-vpc.yml
+
+aws cloudformation create-stack --region us-east-1 --stack-name c3-app --template-body file://starter//c3-app.yml --parameters ParameterKey=KeyPair,ParameterValue=udakey --capabilities CAPABILITY_IAM
+
+
+
+aws s3 cp starter//free_recipe.txt s3://cand-c3-free-recipes-962998915540/ --region us-east-1
+aws s3 cp starter//secret_recipe.txt s3://cand-c3-secret-recipes-962998915540/ --region us-east-1
+
+Test
+http://http://c1-web-service-alb-1613341670.us-east-1.elb.amazonaws.com/free_recipe
+
+
+
+{
+    "StackId": "arn:aws:cloudformation:us-east-1:962998915540:stack/c3-s3/133f30c0-a30f-11ef-a278-0affe3b3a349"
+},
+{
+    "StackId": "arn:aws:cloudformation:us-east-1:962998915540:stack/c3-vpc/0622cc10-a311-11ef-858f-12c7698ff98d"
+},
+{
+    "StackId": "arn:aws:cloudformation:us-east-1:962998915540:stack/c3-app/1972c4c0-a314-11ef-ae34-12be1755f059"
+}
