@@ -1,0 +1,5 @@
+Vulnerability Analysis
+Examine and evaluate the security weaknesses present in the code implemented within this project environment. A recognized concern is that the EC2 instance has an open port range (0 to 65535) accessible via TCP from the Internet Gateway.
+
+Recommendations for Remediation
+To address this vulnerability, configure the security groups to permit traffic solely from the Application Load Balancer (ALB), thereby restricting access to the EC2 instance. This will minimize exposure to essential traffic only and improve overall security.

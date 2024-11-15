@@ -1,0 +1,15 @@
+Changes to Prevent SSH Brute Force Attacks
+Block SSH Access: Disable SSH connections to the EC2 instances if they are not required for operational purposes.
+
+Move EC2 Instances to a Private Subnet: Place the EC2 instances in a private subnet and configure them to allow connections solely from load balancers, eliminating direct internet exposure.
+
+Limit Open Ports on EC2: Restrict the number of open ports on the EC2 instances, ensuring that only necessary ports for application functionality are accessible.
+
+Preventing Access to Sensitive Data
+To safeguard against unauthorized access to sensitive data, such as the "secret recipes" bucket, consider the following measures:
+
+Restrict Access to Sensitive Data: Ensure that sensitive data is not accessible from any instance that does not require it, implementing the principle of least privilege.
+
+Encrypt Sensitive Data: Use encryption to protect data at rest and in transit, making it unreadable to unauthorized users.
+
+Configure Resource Policies: Set up stringent resource policies that restrict access to the data, ensuring that only authorized entities can access sensitive information.

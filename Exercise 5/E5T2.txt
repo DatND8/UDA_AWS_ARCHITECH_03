@@ -1,0 +1,15 @@
+Tools for Scanning Infrastructure and Code
+Scan Infrastructure as Code Templates
+Terraform fmt: While not a dedicated security scanner, this built-in Terraform tool helps identify formatting issues that could potentially lead to vulnerabilities.
+Example Vulnerability:
+IAMRolesOverprivilegedRule: The role 'rootRole' has overly permissive permissions defined as '*'.
+Scan AMIs or Containers for OS Vulnerabilities
+Trivy: An open-source vulnerability scanner that checks container images for vulnerabilities, including issues in the base operating system.
+Example Vulnerability:
+Unpatched software vulnerabilities in the base image that could be exploited.
+Scan an AWS Environment for Cloud Configuration Vulnerabilities
+CloudSploit: Scans CloudFormation templates for security misconfigurations specifically related to AWS.
+AWS Config: A service that continuously monitors and records AWS resource configurations for compliance with best practices.
+AWS Security Hub: Provides a centralized view of security findings from various AWS services and integrated partner solutions.
+Example Vulnerability:
+An exposed service in the c3-app.yml file that allows unrestricted access to a wide range of ports.

@@ -1,0 +1,11 @@
+GuardDuty Findings Related to Brute Force Attacks
+Finding: UnauthorizedAccess
+Detection Mechanism of GuardDuty
+According to the AWS GuardDuty documentation, it continuously monitors for malicious or unauthorized activity within your AWS environment. While GuardDuty does not perform direct scans for brute force attacks, it can identify such incidents by analyzing various data sources.
+
+Data Sources Analyzed by GuardDuty:
+VPC Flow Logs: These logs track network traffic to and from AWS resources. In the case of a brute force attack, GuardDuty can detect a significant number of failed login attempts originating from a single IP address targeting a specific port.
+
+CloudTrail Logs: These logs document API calls made to AWS services. If a brute force attack is directed at an AWS service that utilizes APIs, GuardDuty can identify unusual patterns indicative of unauthorized access attempts.
+
+By leveraging these data sources, GuardDuty enhances your ability to detect potential security threats, including brute force attacks.

@@ -1,0 +1,12 @@
+
+### Additional Architectural Change to Reduce Internet-Facing Attack Surface
+To minimize the attack surface of the web application instance, consider moving it to a private subnet. This will limit direct exposure to the internet.
+
+### VPC Private Endpoints for S3
+If the IAM permissions for the S3 bucket remain insecure, creating VPC private endpoints for S3 will help prevent unauthorized access to the secrets bucket. By using AWS VPC S3 endpoints, access to S3 occurs entirely within the AWS network, enhancing both security and performance.
+
+### Impact of Default Encryption on Existing S3 Data
+Default encryption settings for S3 buckets will not retroactively encrypt data that already exists in the bucket. While it secures any new objects uploaded after enabling it, existing objects will need to be encrypted separately, which can be done using the AWS CLI, though it is not a direct process.
+
+### Effect of Applying Original CloudFormation Templates
+Applying the original CloudFormation templates to this environment will not affect existing resources unless you modify the templates to update them. If you intend to create new resources, the existing setup will remain intact. To ensure changes are applied, the CloudFormation YAML file would need to be updated accordingly.
